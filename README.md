@@ -25,7 +25,7 @@ Restart ComfyUI.
 4. Enter your **Share key** and a title for the workflow, and click **Upload workflow**.
 5. ComfyRun will deploy your workflow to the cloud and return a URL where anyone can easily run it online, or run it locally.
 
-### Importing a workflow locally
+### Importing & running an online workflow, locally
 
 1. Click on **Import from ComfyRun** on the ComfyUI menu.
 2. Enter the workflow URL that you want to run locally.
