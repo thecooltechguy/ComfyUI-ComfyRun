@@ -6,6 +6,13 @@ The easiest way to run & share any ComfyUI workflow
 
 ## Installation
 
+This uses ComfyUI-Manager's experimental **Snapshots** feature, so please make sure you have the latest version of ComfyUI-Manager installed: [https://github.com/ltdrdata/ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)
+
+
+### Option 1: Install from ComfyUI-Manager
+To install this custom node from ComfyUI-Manager, click on **Custom Nodes** on the ComfyUI menu, and search for **ComfyRun**.
+
+### Option 2: Install manually
 ```bash
 cd ComfyUI/custom_nodes/
 git clone https://github.com/thecooltechguy/ComfyUI-ComfyRun
