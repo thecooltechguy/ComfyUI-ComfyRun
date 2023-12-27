@@ -271,6 +271,10 @@ async def api_comfyworkflows_import_from_url(request):
                 # Download the file in chunks
                 async with retry_client.get(file_url) as resp:
                     assert resp.status == 200
+
+                    # create parent directories if they don't exist
+                    os.makedirs(os.path.dirname(dest_file_path), exist_ok=True)
+
                     with open(dest_file_path, 'wb') as f:
                         chunk = await resp.content.read(1024)
                         while chunk:
@@ -302,6 +306,9 @@ async def api_comfyworkflows_import_from_url(request):
             # Save it to local disk
             snapshot_filename = f"CW-BeforeImport-{slugify(title or '')}-{time.strftime('%Y-%m-%d-%H-%M-%S')}.json"
             snapshot_path = os.path.join(base_path, "custom_nodes", "ComfyUI-Manager", "snapshots", snapshot_filename)
+
+            # create parent directories if they don't exist
+            os.makedirs(os.path.dirname(snapshot_path), exist_ok=True)
 
             with open(snapshot_path, 'w') as f:
                 json.dump(current_snapshot, f, indent=4)
