@@ -8,19 +8,19 @@ var docStyle = document.createElement('style');
 
 //   flex-wrap: wrap;
 docStyle.innerHTML = `
-.cm-menu-container {
+.cw-menu-container {
   column-gap: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.cm-menu-column {
+.cw-menu-column {
   display: flex;
   flex-direction: column;
 }
 
-.cm-title {
+.cw-title {
 	padding: 10px 10px 0 10p;
 	background-color: black;
 	text-align: center;
@@ -66,15 +66,6 @@ const style = `
 }
 `;
 
-
-
-async function init_badge_mode() {
-	api.fetchApi('/manager/badge_mode')
-		.then(response => response.text())
-		.then(data => { badge_mode = data; })
-}
-
-await init_badge_mode();
 
 export var cw_instance = null;
 export var cw_import_instance = null;
@@ -202,16 +193,16 @@ class CWMenuDialog extends ComfyDialog {
 		});
 
 		const content =
-			$el("div.cm-menu-container", //"div.comfy-modal-content",
+			$el("div.cw-menu-container", //"div.comfy-modal-content",
 				[
-					$el("tr.cm-title", { width: "100%" }, [
+					$el("tr.cw-title", { width: "100%" }, [
 						$el("font", { size: 6, color: "white" }, [`Upload your workflow to ComfyRun.com`])]
 					),
 					$el("br", {}, []),
 
 					// add "share key" input (required), "title" input (required), "description" input (optional)
-					// $el("div.cm-menu-container", {width:"100%"}, [
-					$el("div.cm-menu-column", [
+					// $el("div.cw-menu-container", {width:"100%"}, [
+					$el("div.cw-menu-container", [
 						$el("details", {
 							style: {
 								border: "1px solid #999",
@@ -448,15 +439,15 @@ class CWImportMenuDialog extends ComfyDialog {
 		});
 
 		const content =
-			$el("div.cm-menu-container", //"div.comfy-modal-content",
+			$el("div.cw-menu-container", //"div.comfy-modal-content",
 				[
-					$el("tr.cm-title", { width: "100%" }, [
+					$el("tr.cw-title", { width: "100%" }, [
 						$el("font", { size: 6, color: "white" }, [`Import workflow from ComfyRun.com`])]
 					),
 					$el("br", {}, []),
 
-					// $el("div.cm-menu-container", {width:"100%"}, [
-					$el("div.cm-menu-column", [
+					// $el("div.cw-menu-container", {width:"100%"}, [
+					$el("div.cw-menu-container", [
 						$el("h4", {
 							textContent: "Import workflow from ComfyRun.com URL",
 							size: 3,
